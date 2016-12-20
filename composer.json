@@ -1,0 +1,28 @@
+{
+    "name": "jshayes/slack-message-builder",
+    "description": "A library that makes building slack messages easier.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Justin Hayes",
+            "email": "justin@justinhayes.ca"
+        }
+    ],
+    "require": {
+        "illuminate/support": "^5.3"
+    },
+    "require-dev": {
+        "mockery/mockery": "^0.9.6",
+        "phpunit/phpunit": "^5.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "JSHayes\\SlackMessageBuilder\\": "src/Slack"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\" : "tests/"
+        }
+    }
+}
