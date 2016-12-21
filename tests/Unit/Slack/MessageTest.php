@@ -37,6 +37,32 @@ class MessageTest extends TestCase
         $this->assertSame($message, $return);
     }
 
+    public function testItSetsTheChannel()
+    {
+        $message = new Message();
+        $return = $message->setChannel('channel');
+
+        $expected = [
+            'text' => '',
+            'channel' => 'channel'
+        ];
+        $this->assertEquals($expected, $message->JsonSerialize());
+        $this->assertSame($message, $return);
+    }
+
+    public function testItSetsTheRecipient()
+    {
+        $message = new Message();
+        $return = $message->setRecipient('username');
+
+        $expected = [
+            'text' => '',
+            'channel' => '@username'
+        ];
+        $this->assertEquals($expected, $message->JsonSerialize());
+        $this->assertSame($message, $return);
+    }
+
     public function testAddAttachmentAddsAnAttachment()
     {
         $message = new Message('text');

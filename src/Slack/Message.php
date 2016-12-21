@@ -16,7 +16,7 @@ class Message extends AttributeCollection
     }
 
     /**
-     * Set the user name for this message
+     * Set the username for this message
      *
      * @param string $username
      *        The username for the message
@@ -27,6 +27,36 @@ class Message extends AttributeCollection
     public function setUsername(string $username): Message
     {
         $this->putItem('username', $username);
+        return $this;
+    }
+
+    /**
+     * Set the channel name for this message
+     *
+     * @param string $channel
+     *        The channel name for the message
+     *
+     * @return \JSHayes\SlackMessageBuilder\Message
+     *         This message instance
+     */
+    public function setChannel(string $channel): Message
+    {
+        $this->putItem('channel', $channel);
+        return $this;
+    }
+
+    /**
+     * Set the username of the recipient of this message
+     *
+     * @param string $username
+     *        The username of the recipient
+     *
+     * @return \JSHayes\SlackMessageBuilder\Message
+     *         This message instance
+     */
+    public function setRecipient(string $username): Message
+    {
+        $this->putItem('channel', '@' . $username);
         return $this;
     }
 
